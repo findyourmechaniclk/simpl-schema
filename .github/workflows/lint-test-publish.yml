@@ -10,6 +10,7 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     defaults:
       run:
         shell: bash
@@ -30,6 +31,7 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     defaults:
       run:
         shell: bash
@@ -52,6 +54,7 @@ jobs:
 
   publish:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     if: ${{ github.event_name == 'push' && github.repository_owner == 'longshotlabs' && github.ref == 'refs/heads/main' }}
     needs: [lint, test]
     permissions:
