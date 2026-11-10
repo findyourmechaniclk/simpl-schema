@@ -1,6 +1,7 @@
 name: Lint, Test, and (Maybe) Publish
 
 on:
+  workflow_dispatch:
   pull_request:
   push:
     branches:
